@@ -14,9 +14,13 @@ solver = RocketSolver('problemType', 'ROCKET_IAC');
 % For some reason the toolbox uses bLb for liquid species
 mix = Mixture(sys);
 
+%The problem we're going to solve here is part A of HW8 just as a test
 fuel_mass_frac = 50.75;
-fuel_molar_weight = 2.016;
-oxidizer_molar_weight = 32;
+
+fuel = {'H2'};
+oxidizer = {'O2bLb'};
+fuel_molar_weight = DB.getProperty(fuel, 'W');
+oxidizer_molar_weight = DB.getProperty(oxidizer, 'W');
 
 set(mix, {'H2'}, 'fuel', fuel_mass_frac / fuel_molar_weight);
 set(mix, {'O2bLb'}, 'oxidizer', (100 - fuel_mass_frac) / oxidizer_molar_weight);
