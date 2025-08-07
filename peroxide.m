@@ -1,5 +1,4 @@
 %% Front Matter
-%% FIXME: Are Cp and Cv in J/kgK or J/kgMol
 
 % Don't regen the database, but everything else should get cleared
 % Otherwise weird state can persist in the mixture causing bad things
@@ -105,8 +104,6 @@ turbine_exit.setTemperature(T5);
 turbine_exit.setProperties('mach', M5);
 R5 = 8.314 / turbine_exit.MW;
 print(turbine_exit, turbine_total);
-
-
 
 [~, ~, ~, ~, Aconv] = flowisentropic(gamma5, M5);
 [M6, T6, ~, ~, Adiv] = flowisentropic(gamma5, p_amb/Pt5, 'pres');
