@@ -177,6 +177,6 @@ PSFC_overall = design_max_gross_thrust * M_cruise * a_amb ...
 
 GTOW = dry_mass + prop_mass;
 max_fuel = prop_mass*(1-tank_fraction);
-range = L_D*PSFC_overall*log(GTOW/(GTOW-max_fuel)); % meters
+range = L_D*PSFC_overall*log(GTOW/(GTOW-max_fuel))/g; % meters
 range_nmi = range / 1852;
 fprintf('Calculated maximum range: %d nmi\n', round(range_nmi));
